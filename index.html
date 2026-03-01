@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Yadav | Web Developer Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fc;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #2563eb;
+            font-size: 24px;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin: 0 12px;
+        }
+
+        .nav-link:hover {
+            color: #2563eb !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #fbbf24;
+            border-bottom: 3px solid #fbbf24;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn-custom {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-right: 15px;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background: #f8fafc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        .btn-resume {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-resume:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: #1e293b;
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Upload Section - Sabko Dikhega */
+        .upload-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .upload-header {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .upload-area {
+            border: 3px dashed #2563eb;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .upload-area:hover {
+            background: #e2e8f0;
+            border-color: #7c3aed;
+        }
+
+        .upload-area i {
+            font-size: 50px;
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* Resume View Section */
+        .resume-view-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .resume-header {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .resume-viewer {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .no-resume {
+            background: #f8fafc;
+            padding: 80px;
+            text-align: center;
+            border-radius: 10px;
+            color: #64748b;
+        }
+
+        .no-resume i {
+            font-size: 80px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* About Section */
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item i {
+            color: #2563eb;
+            width: 25px;
+            font-size: 16px;
+        }
+
+        .info-item span {
+            font-weight: 600;
+            color: #1e293b;
+            margin-left: 10px;
+        }
+
+        .info-item a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Education Section */
+        .education-section {
+            background: white;
+        }
+
+        .edu-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .edu-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .edu-card .institute {
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .edu-card .year {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .edu-card .year i {
+            margin-right: 5px;
+        }
+
+        .edu-card .grade {
+            background: #2563eb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        /* Training Section */
+        .training-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #7c3aed;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .training-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .training-card .company {
+            color: #7c3aed;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .training-card .duration {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .training-card .duration i {
+            margin-right: 5px;
+        }
+
+        .training-card p {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: #f8fafc;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .skill-category h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+        }
+
+        .progress-bar {
+            background: #2563eb;
+            border-radius: 4px;
+        }
+
+        .soft-skill-item {
+            background: #e2e8f0;
+            color: #1e293b;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 14px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #475569;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            margin-bottom: 15px;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #1e293b;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 11px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .project-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 13px;
+            margin-right: 15px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-text h5 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 3px;
+        }
+
+        .contact-text p {
+            color: #475569;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-control {
+            border: 1px solid #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .form-control:focus {
+            border-color: #2563eb;
+            box-shadow: none;
+        }
+
+        .btn-submit {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 500;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            line-height: 35px;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 40px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .btn-custom, .btn-resume {
+                display: block;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .resume-viewer {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i>Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#training">Training</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Hi, I'm <span>Abhishek Yadav</span></h1>
+                    <p class="mb-3"><i class="fas fa-laptop-code me-2"></i>Web Developer | Diploma Holder | Passionate Learner</p>
+                    <p class="mb-4">I create responsive websites and love to learn new technologies. Looking for opportunities to grow and contribute.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#projects" class="btn btn-custom btn-primary">
+                            <i class="fas fa-briefcase me-2"></i>View Work
+                        </a>
+                        <a href="#contact" class="btn btn-custom btn-outline-light">
+                            <i class="fas fa-paper-plane me-2"></i>Hire Me
+                        </a>
+                        <a href="#resume" class="btn-resume">
+                            <i class="fas fa-file-pdf me-2"></i>View Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="New Profile photo.jpeg" alt="Profile" class="img-fluid rounded-circle" style="max-width: 350px; border: 5px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section - Sabko Dikhega -->
+    <section class="section">
+        <div class="container">
+            <div class="upload-section">
+                <div class="upload-header">
+                    <h4 class="mb-0"><i class="fas fa-cloud-upload-alt me-2"></i>Resume Upload</h4>
+                    <p class="mb-0 small opacity-75">Upload your resume (PDF)</p>
+                </div>
+                
+                <div class="upload-area" onclick="document.getElementById('resume-upload').click();">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>Click to Upload Resume</h4>
+                    <p class="text-muted">Upload PDF file (Max 5MB)</p>
+                    <input type="file" id="resume-upload" accept=".pdf" style="display: none;" onchange="uploadResume(this)">
+                </div>
+                
+                <div id="upload-status" class="mt-3" style="display: none;">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span id="status-message">Resume uploaded successfully!</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4" id="current-resume-info" style="display: none;">
+                    <h5>Current Resume:</h5>
+                    <p id="resume-details"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume View Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-file-pdf me-2"></i>My Resume</h2>
+                <div class="line"></div>
+                <p class="mt-3 text-muted">View and download my resume in PDF format</p>
+            </div>
+
+            <div class="resume-view-section" id="resume-view-section">
+                <div class="resume-header">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4 class="mb-1"><i class="fas fa-file-pdf me-2"></i>Abhishek Yadav - Resume</h4>
+                            <p class="mb-0 small opacity-75">Last updated: <span id="resume-date">Not available</span></p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <a href="#" id="download-resume" class="download-btn" download>
+                                <i class="fas fa-download me-2"></i>Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PDF Viewer -->
+                <div id="resume-container" style="display: none;">
+                    <iframe id="resume-viewer" class="resume-viewer" frameborder="0"></iframe>
+                </div>
+                
+                <!-- No Resume Message -->
+                <div id="no-resume-message" class="no-resume">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4 class="mt-3">No Resume Available</h4>
+                    <p class="text-muted mb-4">Please upload a resume using the upload section above.</p>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('resume-upload').click();">
+                        <i class="fas fa-upload me-2"></i>Upload Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="abhishek profile pic .jpeg" alt="About" class="about-img">
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h3>Who am I?</h3>
+                        <p>I'm a passionate web developer with diploma in Information Technology. I love building websites and learning new technologies. Currently looking for opportunities to grow and contribute.</p>
+                        
+                        <div class="info-box">
+                            <div class="info-item">
+                                <i class="fas fa-user"></i> <span>Name:</span> Abhishek Yadav
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i> <span>Age:</span> 21 Years
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i> <span>Email:</span> abhishekyadav9451up@gmail.com
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i> <span>Phone:</span> +91 9451368779
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i> <span>City:</span> Prayagraj,Uttar Pradesh
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-file-pdf"></i> <span>Resume:</span> 
+                                <a href="#resume" class="text-primary">
+                                    <i class="fas fa-eye me-1"></i>View Resume
+                                </a>
+                                <span id="resume-indicator" class="ms-2 badge bg-success" style="display: none;">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-graduation-cap me-2"></i>My Education</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="edu-card">
+                        <h4>High School (10th)</h4>
+                        <div class="institute">UP BOARD</div>
+                        <div class="year"><i class="far fa-calendar-alt"></i> 2019 - 2020</div>
+                        <span class="grade">Percentage: 71.1%</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="edu-card">
+                        <h4>Intermediate (12th) - Science</h4>
+                        <div class="institute">UP BOARD</div>
+                        <div class="year"><i class="far fa-calendar-alt"></i> 2021 - 2022</div>
+                        <span class="grade">Percentage: 65.2%</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="edu-card">
+                        <h4>Diploma in Information Technology & Engineering</h4>
+                        <div class="institute">Government Polytechnic Mirzapur</div>
+                        <div class="year"><i class="far fa-calendar-alt"></i> 2023 - 2026</div>
+                        <span class="grade">Percentage: 74.2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-chalkboard-teacher me-2"></i>Training & Internship</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="training-card">
+                        <h4>Web Development Summer Training</h4>
+                        <div class="company">Digicoader Pvt. Ltd., Luckhnow</div>
+                        <div class="duration"><i class="far fa-calendar-alt"></i> June 2025 - August 2025 </div>
+                        <p>Learned HTML, CSS, JavaScript, and Bootstrap. backend development with PHP and MySQL. Created a blog system and a login/registration system. Created 3 mini projects including a portfolio website and a calculator app.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="training-card">
+                        <h4>Soft Skills & Communication Workshop</h4>
+                        <div class="company">Infosys Foundation,</div>
+                        <div class="duration"><i class="far fa-calendar-alt"></i> October 2025 (15 days)</div>
+                        <p>Improved communication skills, teamwork, and interview preparation techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-cogs me-2"></i>My Skills</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-category">
+                        <h4>Technical Skills</h4>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>HTML5</span> <span>90%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>CSS3</span> <span>85%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Bootstrap</span> <span>85%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>PHP</span> <span>70%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MySQL</span> <span>70%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Python (Basic)</span> <span>60%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-category">
+                        <h4>Soft Skills</h4>
+                        <div>
+                            <span class="soft-skill-item"><i class="fas fa-users me-1"></i>Team Work</span>
+                            <span class="soft-skill-item"><i class="fas fa-comments me-1"></i>Communication</span>
+                            <span class="soft-skill-item"><i class="fas fa-puzzle-piece me-1"></i>Problem Solving</span>
+                            <span class="soft-skill-item"><i class="fas fa-clock me-1"></i>Time Management</span>
+                            <span class="soft-skill-item"><i class="fas fa-rocket me-1"></i>Quick Learner</span>
+                            <span class="soft-skill-item"><i class="fas fa-sync me-1"></i>Adaptability</span>
+                            <span class="soft-skill-item"><i class="fas fa-tasks me-1"></i>Leadership</span>
+                            <span class="soft-skill-item"><i class="fas fa-lightbulb me-1"></i>Creativity</span>
+                        </div>
+                    </div>
+                    <div class="skill-category mt-4">
+                        <h4>Languages</h4>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Hindi</span> <span>100%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>English</span> <span>80%</span></div>
+                            <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-code-branch me-2"></i>My Projects</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Project" class="project-img">
+                        <div class="project-info">
+                            <h4>Portfolio Website</h4>
+                            <p>Personal portfolio website using HTML, CSS, and Bootstrap with responsive design.A Portfolio Website is used to showcase a person’s skills, projects, qualifications, and experience professionally online.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://my-portolfio.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://app.netlify.com/teams/abhishek1054yadav" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" alt="Project" class="project-img">
+                        <div class="project-info">
+                            <h4>Calculator App</h4>
+                            <p>Simple calculator with JavaScript for basic calculations with clean UI.A Calculator is used to perform mathematical calculations such as addition, subtraction, multiplication, and division quickly and accurately.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Android</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Project" class="project-img">
+                        <div class="project-info">
+                            <h4>Room Information System</h4>
+                            <p>A Room Information System is used to display room details, manage bookings, and maintain room data efficiently.User login and registration system with PHP and MySQL database.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://69903a21cfc7fd8b70823530--room-info-system.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://app.netlify.com/teams/abhishek1054yadav" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" alt="Project" class="project-img">
+                        <div class="project-info">
+                            <h4>Medical Store</h4>
+                            <p>Medical Store website ka kaam medicines ko online dikhana, order lena aur store ka data manage karna hota hai.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                  <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://bajrang-medical-store.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/Abhishek1054yadav/Medical-Store" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+                
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-address-card me-2"></i>Contact Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h5>Address</h5>
+                            <p>Raghunathpur,Sikandra, Prayagraj</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text">
+                            <h5>Phone</h5>
+                            <p>+91 9451368779</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h5>Email</h5>
+                            <p>abhishekyadav9451up@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="contact-text">
+                            <h5>Resume</h5>
+                            <p>
+                                <a href="#resume" class="text-decoration-none text-primary">
+                                    <i class="fas fa-eye me-1"></i> View Resume
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Subject">
+                            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/abhishek-yadav-3736ba29a?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mt-3">© 2026 Abhishek Yadav. All rights reserved.</p>
+            <p class="small text-white-50">
+                <i class="fas fa-file-pdf me-1"></i> 
+                <a href="#resume" class="text-white">View Resume</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        // GSAP Animations
+        gsap.from('.hero h1', { duration: 1, y: 50, opacity: 0 });
+        gsap.from('.hero p', { duration: 1, y: 50, opacity: 0, delay: 0.2 });
+        gsap.from('.hero .btn-custom, .hero .btn-resume', { duration: 1, y: 50, opacity: 0, delay: 0.4, stagger: 0.2 });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'white';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Resume Upload Function - Sab Upload Kar Sakte Hain
+        function uploadResume(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                
+                // Check if PDF
+                if (file.type !== 'application/pdf') {
+                    alert('Please upload only PDF files');
+                    return;
+                }
+                
+                // Check size (max 5MB)
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('File size should be less than 5MB');
+                    return;
+                }
+                
+                // Read file as data URL
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const fileData = e.target.result;
+                    
+                    // Save to localStorage
+                    localStorage.setItem('resumeData', fileData);
+                    localStorage.setItem('resumeName', file.name);
+                    localStorage.setItem('resumeDate', new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString());
+                    
+                    // Show success message
+                    document.getElementById('upload-status').style.display = 'block';
+                    document.getElementById('status-message').innerHTML = `<i class="fas fa-check-circle me-2"></i>Resume "${file.name}" uploaded successfully!`;
+                    
+                    // Update current resume info
+                    document.getElementById('current-resume-info').style.display = 'block';
+                    document.getElementById('resume-details').innerHTML = `<strong>${file.name}</strong> - Uploaded on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}`;
+                    
+                    // Update resume viewer
+                    updateResumeViewer();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Update Resume Viewer
+        function updateResumeViewer() {
+            const resumeData = localStorage.getItem('resumeData');
+            const resumeName = localStorage.getItem('resumeName');
+            const resumeDate = localStorage.getItem('resumeDate');
+            
+            if (resumeData) {
+                // Show resume viewer
+                document.getElementById('resume-container').style.display = 'block';
+                document.getElementById('no-resume-message').style.display = 'none';
+                document.getElementById('resume-viewer').src = resumeData;
+                document.getElementById('download-resume').href = resumeData;
+                document.getElementById('download-resume').download = resumeName || 'resume.pdf';
+                
+                // Update date
+                document.getElementById('resume-date').innerText = resumeDate || 'Today';
+                
+                // Show indicator in about section
+                document.getElementById('resume-indicator').style.display = 'inline-block';
+            } else {
+                // Show no resume message
+                document.getElementById('resume-container').style.display = 'none';
+                document.getElementById('no-resume-message').style.display = 'block';
+                document.getElementById('resume-indicator').style.display = 'none';
+                document.getElementById('resume-date').innerText = 'Not available';
+            }
+        }
+
+        // Check for existing resume on page load
+        window.addEventListener('load', function() {
+            updateResumeViewer();
+            
+            // Check URL hash
+            if (window.location.hash === '#resume') {
+                document.getElementById('resume').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        // Load saved resume info on page load
+        const savedResumeName = localStorage.getItem('resumeName');
+        const savedResumeDate = localStorage.getItem('resumeDate');
+        
+        if (savedResumeName && savedResumeDate) {
+            document.getElementById('current-resume-info').style.display = 'block';
+            document.getElementById('resume-details').innerHTML = `<strong>${savedResumeName}</strong> - Uploaded on ${savedResumeDate}`;
+        }
+    </script>
+</body>
+</html>
